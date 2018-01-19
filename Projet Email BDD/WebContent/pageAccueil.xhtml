@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Projet email dans BDD</title>
+</h:head>
+
+<h:body>
+	<h1>Projet email dans BDD - Page accueil</h1>
+	<h:form>
+		<h:outputLabel value="Email: " />
+		<h:inputText id="email" value="#{bonjourBean.nom}" required="true"
+			binding="#{nombindé}" />
+
+
+		<h:outputLabel value="Prénom: " />
+		<h:inputText value="#{bonjourBean.prenom}" required="true">
+			<f:attribute name="nombindéàvalider" value="#{nombindé}" />
+			<f:validator validatorId="nameValidator" />
+			<h:message for="nom"></h:message>
+		</h:inputText>
+
+		<div>
+			<h:commandButton value="Souhaiter la bienvenue" action="bienvenue" />
+		</div>
+		
+		
+	</h:form>
+</h:body>
+
+</html>
